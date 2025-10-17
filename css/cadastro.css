@@ -1,0 +1,48 @@
+ body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: white;
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    h1 {
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .form-label {
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-align: left;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-control {
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
+      height: 45px;
+      font-size: 1rem;
+    }
+
+    .btn-criar {
+      background-color: #15a032;
+      color: white;
+      font-weight: bold;
+      width: 50%;
+      height: 55px;
+      font-size: 1.2rem;
+      border: none;
+      margin-top: 10px;
+    }
+
+    .btn-criar:hover {
+      background-color: #0e7a25;
+    }
