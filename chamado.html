@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Criar Chamado</title>
+<link rel="stylesheet" href="css/chamado.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <ul>
+      <li>🏠 Home</li>
+      <li>➕ Criar Chamado</li>
+      <li>⭐ Chamados</li>
+    </ul>
+  </aside>
+
+  <main class="content">
+    <div class="form-container">
+      <h2>+ Criar Chamado</h2>
+
+      <form>
+        <label for="tipo">TIPO</label>
+        <select id="tipo" name="tipo">
+          <option value="">Selecione...</option>
+        </select>
+
+        <label for="categoria">CATEGORIA</label>
+        <select id="categoria" name="categoria">
+          <option value="">Selecione...</option>
+        </select>
+
+        <label for="urgencia">URGENCIA</label>
+        <select id="urgencia" name="urgencia">
+          <option value="">Selecione...</option>
+        </select>
+
+        <label for="titulo">TITULO</label>
+        <input type="text" id="titulo" name="titulo" />
+
+        <label for="descricao">DESCRIÇÃO</label>
+        <textarea id="descricao" name="descricao"></textarea>
+
+        <div class="buttons">
+          <button type="button" class="btn btn-voltar" onclick="history.back()">VOLTAR</button>
+          <button type="submit" class="btn btn-criar">CRIAR</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
