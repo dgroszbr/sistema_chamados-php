@@ -16,6 +16,17 @@ include 'conexao.php';
 
 
 //instução sql para inserir dados 
-$insert = "INSERT INTO tb_usuario(null,'$nome','$email','$senha')";
+$insert = "INSERT INTO tb_usuario VALUE (null,'$nome','$email','$senha')";
+
+
+$query = $conexao ->query($insert);
+
+if($query == true){
+echo "<script>     alert('usuario cadastrado com sucesso'); window.location.hraf = '../index.html'     </script>";
+
+
+
+}
+
 
 ?>
