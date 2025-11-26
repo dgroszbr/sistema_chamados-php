@@ -6,7 +6,7 @@ $id = $_GET['codigo'];
 include 'conexao.php';
 
 // INSTRUÇÃO DO SQL PARA CAPTURAR USUARIO DIGITADO NA TELA DE LOGIN
-$select = "SELECT * FROM tb_user WHERE id_user = '$id'";
+$select = "SELECT * FROM tb_usuario WHERE id_usuario = '$id'";
 
 // FUNÇÃO QUERY EXECUTA O SELECT DENTRO DO BANCO
 $query = $conexao->query($select);
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
 
     // INSTRUÇÃO SQL PARA FAZER O UPDATE
-    $update = "UPDATE tb_user SET nm_user = '$nome', email = '$email' WHERE id_user = '$id'";
+    $update = "UPDATE tb_usuario SET nm_usuario = '$nome', email = '$email' WHERE id_usuario = '$id'";
 
     // EXECUTA O UPDATE
     if ($conexao->query($update) === TRUE) {
@@ -48,13 +48,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </aside>
         <form action="#" method="post">
             <label for="nome">Nome</label>
-            <input type="text" name="nome" value="<?php echo $resultado['nm_user']; ?>" id="nome">
+            <input type="text" name="nome" value="<?php echo $resultado['nm_usuario']; ?>" id="nome">
 
             <label for="email">Email</label>
             <input type="text" name="email" value="<?php echo $resultado['email']; ?>" id="email">
 
-            <label for="setor">Setor</label>
-            <input type="text" name="setor" value="<?php echo $resultado['setor']; ?>" id="setor">
+            <label for="nome">Senha</label>
+            <input type="text" name="senha" value="<?php echo $resultado['senha']; ?>" id="senha">
 
             <div class="botao">
                 <button type="submit">Editar</button>

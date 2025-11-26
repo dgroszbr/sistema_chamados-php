@@ -8,7 +8,7 @@
         $id = $_GET ['codigo'];
 
         // INSTRUÇÕES PRA DELETAR DENTRO DO SQL
-        $deletar = "DELETE FROM tb_user WHERE id_user = $id";
+        $deletar = "DELETE FROM tb_usuario WHERE id_usuario = $id";
 
         // FUNÇÃO QUERY EXECUTA O SELECT DENTRO DO BANCO
         $query = $conexao->query($deletar);

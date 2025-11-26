@@ -29,7 +29,6 @@
                     <th scope="col">ID</th>
                     <th scope="col">NOME</th>
                     <th scope="col">EMAIL</th>
-                    <th scope="col">SETOR</th>
                     <th scope="col">Delete</th>
                     <th scope="col">Editar</th>
                 </tr>
@@ -41,7 +40,7 @@
                     include 'conexao.php';
                 
                     // INSTRUÇÃO DO SQL PARA CAPTURAR TODOS OS DADOS DO BANCO
-                    $select = "SELECT * FROM tb_user";
+                    $select = "SELECT * FROM tb_usuario";
 
                     // FUNÇÃO QUERY EXECUTA O SELECT DENTRO DO BANCO
                     $query = $conexao->query($select);
@@ -50,12 +49,11 @@
                     while ($resultado = $query->fetch_assoc()) {              
                 ?>
                 <tr>
-                    <th scope="row"> <?php echo $resultado ['id_user']?> </th>
-                                <td> <?php echo $resultado ['nm_user']?> </td>
+                    <th scope="row"> <?php echo $resultado ['id_usuario']?> </th>
+                                <td> <?php echo $resultado ['nm_usuario']?> </td>
                                 <td> <?php echo $resultado ['email']?> </td>
-                                <td> <?php echo $resultado ['setor']?> </td>
-                                <td> <a href="delete_user.php?codigo=<?php echo $resultado ['id_user']?>"><i class="fa-solid fa-trash-can"></i> </a> </td>
-                                <td> <a href="update_user.php?codigo=<?php echo $resultado ['id_user']?>"> <i class="fa-solid fa-user-pen"></i> </a> </td>
+                                <td> <a href="delete_user.php?codigo=<?php echo $resultado ['id_usuario']?>"><i class="fa-solid fa-trash-can"></i> </a> </td>
+                                <td> <a href="update_user.php?codigo=<?php echo $resultado ['id_usuario']?>"> <i class="fa-solid fa-user-pen"></i> </a> </td>
                 </tr>
 
                 <?php  };  ?>

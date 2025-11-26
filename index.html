@@ -12,16 +12,17 @@
 <body>
   <div class="login-container">
     <h1>LOGIN</h1>
-    <form>
+    <form action="php/login.php" method="post">
       <div class="mb-3 text-start">
         <label for="email" class="form-label">EMAIL:</label>
-        <input type="email" id="email" class="form-control" placeholder="email">
+        <input type="email" name = "email" id="email" class="form-control" placeholder="email">
       </div>
       <div class="mb-3 text-start">
         <label for="senha" class="form-label">SENHA:</label>
-        <input type="password" id="senha" class="form-control" placeholder="senha">
+        <input type="password" name = "senha" id="senha" class="form-control" placeholder="senha">
       </div>
-      <a type="submit" class="btn btn-login">ENTRAR</a>
+      <button type="submit" class="btn btn-login" >ENTRAR</a>
+      <br>
       <br>
       <a href="cadastro.html" class="btn-criar" onclick="window.location.href='cadastro.html'">CADASTRE-SE</a>
     </form>
