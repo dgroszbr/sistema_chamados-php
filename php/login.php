@@ -4,6 +4,8 @@ $email = $_POST['email'];
 $senha = $_POST['senha'];
 
 
+
+
 if($email == null){
     echo "<script>alert('digite o email ou senha'); history.back() </script>";
     
@@ -30,6 +32,9 @@ $senha_banco = $resultado ['senha'];
 
 // COMPARA INFORMAÇÕES DO INDEX COM O BANCO
 if ($email == $email_banco && $senha == $senha_banco) {
+    session_start();
+    $_SESSION['id_usuario']= $resultado ['id'];
+     $_SESSION['nm_usuario']= $resultado ['nm_usuario'];
     //header('location: ../home.html');
     echo "<script> window.location.href='../home.html'; </script>";
 
