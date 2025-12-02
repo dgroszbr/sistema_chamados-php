@@ -46,7 +46,7 @@
           <div class="mb-big">
             <label class="custom-label" for="tipo">TIPO</label>
             <div class="select-wrap">
-              <select id="tipo" class="field">
+              <select id="tipo" name="tipo" class="field">
 
                     <?php
                     include 'php/conexao.php';
@@ -66,7 +66,7 @@
           <div class="mb-big">
             <label class="custom-label" for="categoria">CATEGORIA</label>
             <div class="select-wrap">
-              <select id="categoria" class="field">
+              <select id="categoria" name="categoria" class="field">
 
                     <?php
                     include 'php/conexao.php';
@@ -85,7 +85,7 @@
           <div class="mb-big">
             <label class="custom-label" for="urgencia">URGENCIA</label>
             <div class="select-wrap">
-              <select id="urgencia" class="field">
+              <select id="urgencia" name="urgencia" class="field">
 
                     <?php
                     include 'php/conexao.php';
@@ -104,7 +104,7 @@
           <div class="mb-big">
             <label class="custom-label" for="titulo">TITULO</label>
             <div class="select-wrap">
-              <select id="titulo" class="field">
+              <select id="titulo" name="titulo" class="field">
 
                     <?php
                     include 'php/conexao.php';
@@ -122,7 +122,7 @@
           <!-- DESCRIÇÃO -->
           <div class="mb-verybig">
             <label class="custom-label" for="descricao">DESCRIÇÃO</label>
-            <textarea id="descricao" class="field"></textarea>
+            <textarea id="descricao" name="descricao" class="field"></textarea>
           </div>
 
           <!-- Área dos botões -->
