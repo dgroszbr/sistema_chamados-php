@@ -9,6 +9,24 @@
   <link rel="stylesheet" href="css/chamado.css" />
 </head>
 <body>
+
+
+  <?php
+  session_start();
+  if(isset($_SESSION['id_usuario'])){
+    $nome_usuarios = $_SESSION['nm_usuario'];
+    echo "Olá ". $nome_usuarios;
+
+  } else{
+  echo  "<script>alert('você não esta logado'); window.history.back();</script>";
+  }
+  
+?>
+
+
+
+
+
   <div style="display:flex;min-height:100vh;">
     <!-- Sidebar -->
  <div class="sidebar">
@@ -29,10 +47,17 @@
             <label class="custom-label" for="tipo">TIPO</label>
             <div class="select-wrap">
               <select id="tipo" class="field">
-                <option value="">Selecione o tipo</option>
-                <option value="incidente">Incidente</option>
-                <option value="requisicao">Requisição</option>
-                <option value="outro">Outro</option>
+
+                    <?php
+                    include 'php/conexao.php';
+                    $select = "SELECT * FROM tb_tipo";
+                    $query = $conexao->query($select);
+                    while ($resultado = $query->fetch_assoc()) { ?>
+
+                    <option value="id_tipo"><?php echo $resultado['nm_tipo'] ?></option>
+
+              <?php } ?>
+
               </select>
             </div>
           </div>
@@ -42,10 +67,16 @@
             <label class="custom-label" for="categoria">CATEGORIA</label>
             <div class="select-wrap">
               <select id="categoria" class="field">
-                <option value="">Selecione a categoria</option>
-                <option value="hardware">Hardware</option>
-                <option value="software">Software</option>
-                <option value="rede">Rede</option>
+
+                    <?php
+                    include 'php/conexao.php';
+                    $select = "SELECT * FROM tb_categoria";
+                    $query = $conexao->query($select);
+                    while ($resultado = $query->fetch_assoc()) { ?>
+
+                    <option value="id_categoria"><?php echo $resultado['nm_categoria'] ?></option>
+
+              <?php } ?>
               </select>
             </div>
           </div>
@@ -55,10 +86,16 @@
             <label class="custom-label" for="urgencia">URGENCIA</label>
             <div class="select-wrap">
               <select id="urgencia" class="field">
-                <option value="">Selecione a urgência</option>
-                <option value="alta">Alta</option>
-                <option value="media">Média</option>
-                <option value="baixa">Baixa</option>
+
+                    <?php
+                    include 'php/conexao.php';
+                    $select = "SELECT * FROM tb_urgencia";
+                    $query = $conexao->query($select);
+                    while ($resultado = $query->fetch_assoc()) { ?>
+
+                    <option value="id_urgencia"><?php echo $resultado['nm_urgencia'] ?></option>
+
+              <?php } ?>
               </select>
             </div>
           </div>
@@ -68,10 +105,16 @@
             <label class="custom-label" for="titulo">TITULO</label>
             <div class="select-wrap">
               <select id="titulo" class="field">
-                <option value="">Selecione o título</option>
-                <option value="erro-sistema">Erro no Sistema</option>
-                <option value="solicitacao-acesso">Solicitação de Acesso</option>
-                <option value="outro">Outro</option>
+
+                    <?php
+                    include 'php/conexao.php';
+                    $select = "SELECT * FROM tb_tipo";
+                    $query = $conexao->query($select);
+                    while ($resultado = $query->fetch_assoc()) { ?>
+
+                    <option value="id_tipo"><?php echo $resultado['nm_tipo'] ?></option>
+
+              <?php } ?>
               </select>
             </div>
           </div>

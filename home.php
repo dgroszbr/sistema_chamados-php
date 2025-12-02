@@ -16,25 +16,22 @@
 
   <?php
   session_start();
-  if(isset($_SESSION('id_usuario'))){
-    echo "ola" $_SESSION("nm_usuario");
+  if(isset($_SESSION['id_usuario'])){
+    $nome_usuarios = $_SESSION['nm_usuario'];
+    echo "Olá ". $nome_usuarios;
 
-
-
-  }else{
-
-
-    echo  "<script>alert('você não esta logado'); window.history.back();</script>";
+  } else{
+  echo  "<script>alert('você não esta logado'); window.history.back();</script>";
   }
   
-  
-  ?>
+?>
+
+
     <i class="bi bi-list menu-icon"></i>
     <i class="bi bi-person user-icon"></i>
     <a href="home.html"><i class="bi bi-house-door"></i> Home</a>
-    <a href="chamado.html"><i class="bi bi-plus-lg"></i> Criar Chamado</a>
+    <a href="chamado.php"><i class="bi bi-plus-lg"></i> Criar Chamado</a>
   </div>
-
   <!-- Conteúdo principal -->
   <div class="main-content">
     <div class="main-header">
