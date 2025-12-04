@@ -9,9 +9,10 @@
   <link rel="stylesheet" href="css/chamado.css" />
 </head>
 <body>
-
-
-  <?php
+  <div style="display:flex;min-height:100vh;">
+    <!-- Sidebar -->
+  <div class="sidebar">
+      <?php
   session_start();
   if(isset($_SESSION['id_usuario'])){
     $nome_usuarios = $_SESSION['nm_usuario'];
@@ -22,18 +23,10 @@
   }
   
 ?>
-
-
-
-
-
-  <div style="display:flex;min-height:100vh;">
-    <!-- Sidebar -->
- <div class="sidebar">
     <i class="bi bi-list menu-icon"></i>
     <i class="bi bi-person user-icon"></i>
-    <a href="home.html"><i class="bi bi-house-door"></i> Home</a>
-    <a href="chamado.html"><i class="bi bi-plus-lg"></i> Criar Chamado</a>
+    <a href="home.php"><i class="bi bi-house-door"></i> Home</a>
+    <a href="chamado.php"><i class="bi bi-plus-lg"></i> Criar Chamado</a>
   </div>
 
     <!-- Main content with white margin area seen in image -->
@@ -41,22 +34,21 @@
       <section class="panel">
         <div class="title">＋ Criar Chamado</div>
 
-        <form class="form-left" onsubmit="return false;">
+        <form class="form-left" method="POST" action="php/cad_chamados.php">
           <!-- TIPO -->
           <div class="mb-big">
             <label class="custom-label" for="tipo">TIPO</label>
             <div class="select-wrap">
               <select id="tipo" name="tipo" class="field">
 
-                    <?php
+                <?php
                     include 'php/conexao.php';
                     $select = "SELECT * FROM tb_tipo";
                     $query = $conexao->query($select);
                     while ($resultado = $query->fetch_assoc()) { ?>
-
-                    <option value="id_tipo"><?php echo $resultado['nm_tipo'] ?></option>
-
-              <?php } ?>
+                    <option value="<?php echo $resultado['id_tipo']?>"> <?php echo $resultado['nm_tipo']?></option>
+                  <?php }
+                ?>
 
               </select>
             </div>
@@ -68,15 +60,14 @@
             <div class="select-wrap">
               <select id="categoria" name="categoria" class="field">
 
-                    <?php
+                <?php
                     include 'php/conexao.php';
                     $select = "SELECT * FROM tb_categoria";
                     $query = $conexao->query($select);
                     while ($resultado = $query->fetch_assoc()) { ?>
-
-                    <option value="id_categoria"><?php echo $resultado['nm_categoria'] ?></option>
-
-              <?php } ?>
+                    <option value="<?php echo $resultado['id_categoria']?>"> <?php echo $resultado['nm_categoria']?></option>
+                  <?php }
+                ?>
               </select>
             </div>
           </div>
@@ -92,10 +83,9 @@
                     $select = "SELECT * FROM tb_urgencia";
                     $query = $conexao->query($select);
                     while ($resultado = $query->fetch_assoc()) { ?>
-
-                    <option value="id_urgencia"><?php echo $resultado['nm_urgencia'] ?></option>
-
-              <?php } ?>
+                    <option value="<?php echo $resultado['id_urgencia']?>"> <?php echo $resultado['nm_urgencia']?></option>
+                  <?php }
+                    ?>
               </select>
             </div>
           </div>
@@ -103,20 +93,7 @@
           <!-- TITULO -->
           <div class="mb-big">
             <label class="custom-label" for="titulo">TITULO</label>
-            <div class="select-wrap">
-              <select id="titulo" name="titulo" class="field">
-
-                    <?php
-                    include 'php/conexao.php';
-                    $select = "SELECT * FROM tb_tipo";
-                    $query = $conexao->query($select);
-                    while ($resultado = $query->fetch_assoc()) { ?>
-
-                    <option value="id_tipo"><?php echo $resultado['nm_tipo'] ?></option>
-
-              <?php } ?>
-              </select>
-            </div>
+              <input id="titulo" name="titulo" type= "text" class="field" placeholder="Digite o título">
           </div>
 
           <!-- DESCRIÇÃO -->

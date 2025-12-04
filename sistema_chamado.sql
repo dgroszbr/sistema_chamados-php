@@ -24,7 +24,7 @@ create table tb_categoria(
 insert into tb_categoria value (null,"Hardware"), (null,"Software"), (null,"Rede");
 
 create table tb_urgencia(
-    id_urgencia int auto_increment primary key
+    id_urgencia int auto_increment primary key,
     nm_urgencia varchar(20)
 );
 insert into tb_urgencia values
